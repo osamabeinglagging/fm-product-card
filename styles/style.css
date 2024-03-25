@@ -1,0 +1,120 @@
+:root {
+  --clr-dark-cyan: hsl(158, 36%, 37%);
+  --clr-cream: hsl(30, 38%, 92%);
+  --clr-very-dark-blue: hsl(212, 21%, 14%);
+  --clr-dark-grayish-blue: hsl(228, 12%, 48%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --ff-accent: "Fraunces", serif;
+  --ff-base: "Montserrat", sans-serif;
+
+  --fw-500: 500;
+  --fw-700: 700;
+
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  line-height: calc(1rem + 0.5em);
+}
+
+html, body{
+  height: 100%;
+}
+
+img,
+svg{
+  display: block;
+  max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6{
+  overflow-wrap: break-word;
+}
+
+body{
+  display: grid;
+  place-items: center;
+  margin: 1rem;
+
+  background-color: var(--clr-cream);
+  font-size: 14px;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-500);
+  color: var(--clr-dark-grayish-blue);
+}
+
+.product{
+  --content-padding: 1.5rem;
+  --content-gap: 1rem;
+
+  display: grid;
+  background: var(--clr-white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+.product__price{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__content{
+  padding: var(--content-padding);
+  display: grid;
+  gap: var(--content-gap);
+}
+
+.product__category{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.8125rem;
+}
+
+.product__title{
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  color: var(--clr-very-dark-blue);
+}
+
+.product__current-price{
+  font-family: var(--ff-accent);
+  font-size: 2rem;
+  color: var(--clr-dark-cyan);
+}
+
+.button{
+  padding: 0.75em 1.5em;
+  background-color: var(--clr-dark-cyan);
+  color: var(--clr-white);
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 0.925rem;
+  font-weight: var(--fw-700);
+  cursor: pointer;
+  display: flex;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.button[data-icon="carticon"]::before{
+  content: "";
+  background-image: url("../images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
+}
+
+@media(min-width: 600px){
+  .product{
+    --content-padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
